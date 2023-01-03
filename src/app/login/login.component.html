@@ -1,0 +1,37 @@
+<div class="all">
+  <div class="content">
+    <div class="tof">
+      <img height="400px" src="assets/images/mli5.jpeg" alt="">
+    </div>
+
+    <div class="formulaire">
+      <label style="font-weight: bold;" >E-Tulon Login</label>
+
+      <form action="" method="post" #f2="ngForm">
+          <div class="form">
+            <div class="form-floating mb-3">
+              <label>Veuillez remseigner les informations suivantes pour vous connectez !</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" [(ngModel)]="username" name="username" id="username" placeholder="Username" required>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" [(ngModel)]="password" name="password" id="password" placeholder="Password" required>
+            </div>
+
+            <label id="erreur" *ngIf="Iserror">{{erreur}}</label>
+
+
+
+            <div class="form-floating mb-3">
+              <button  class="btn btn-success" [disabled]="f2.form.invalid" (click)="login(f2)">Login</button>
+            </div>
+          </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
