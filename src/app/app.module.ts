@@ -14,6 +14,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { JeuComponent } from './dashboard/jeu/jeu.component';
+import { CitoyenComponent } from './dashboard/citoyen/citoyen.component';
 //import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
@@ -21,7 +23,9 @@ import { MatDividerModule } from '@angular/material/divider';
     AppComponent,
     DashboardComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    JeuComponent,
+    CitoyenComponent,
   ],
   imports: [
     BrowserModule,
