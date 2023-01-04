@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { JeuComponent } from './dashboard/jeu/jeu.component';
 import { CitoyenComponent } from './dashboard/citoyen/citoyen.component';
+import { httpInterceptorProviders } from './Helpers/http.interceptor';
 //import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
@@ -41,7 +42,7 @@ import { CitoyenComponent } from './dashboard/citoyen/citoyen.component';
     //NgxPaginationModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
