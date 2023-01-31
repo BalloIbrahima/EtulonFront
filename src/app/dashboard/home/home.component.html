@@ -1,4 +1,4 @@
-<div class="conaint">
+<div class="containt">
   <div class="c-card mb-4">
     <div class="cd">
         <div class="cd-left text-center w-50">
@@ -8,7 +8,7 @@
           </div>
         </div>
         <div class="ctn w-50">
-            <div class="ctn-content" >200</div>
+            <div class="ctn-content" >{{nbreJeu}}</div>
         </div>
     </div>
     <div class="cd">
@@ -34,4 +34,31 @@
         </div>
     </div>
   </div>
+
+
+  <div class="partiGraphe mb-4">
+
+    <div class="enteteGraphe">
+
+    </div>
+
+    <div class="graphe">
+
+      <label>Statistique de jeu </label>
+      <canvas baseChart
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [type]="barChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+      </canvas>
+
+
+        <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+
+    </div>
+
+  </div>
+
 </div>

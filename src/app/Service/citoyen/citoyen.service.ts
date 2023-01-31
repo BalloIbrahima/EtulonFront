@@ -16,6 +16,11 @@ export class CitoyenService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
   };
+
+  creerCitoyen(citoyen:any){
+
+  }
+
   //liste des citoyens
   listeCitoyen():Observable<any>{
     console.log(this.httpOptions)

@@ -24,6 +24,6 @@ export class JeuService {
 
   //nombre de jeu
   nombrejeu():Observable<any>{
-    return this.http.get(`${this.env.api}/jeu/nbre/jeu`,this.httpOptions);
+    return this.http.get(`${this.env.api}/jeu/getnombre`,this.httpOptions);
   }
 }

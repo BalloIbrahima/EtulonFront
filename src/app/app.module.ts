@@ -17,7 +17,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { JeuComponent } from './dashboard/jeu/jeu.component';
 import { CitoyenComponent } from './dashboard/citoyen/citoyen.component';
 import { httpInterceptorProviders } from './Helpers/http.interceptor';
-//import { NgxPaginationModule } from 'ngx-pagination';
+import { NgChartsModule } from 'ng2-charts';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { AdminComponent } from './dashboard/admin/admin.component';
+import { ConseilComponent } from './dashboard/conseil/conseil.component';
+import { ProblematiqueComponent } from './dashboard/problematique/problematique.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,9 @@ import { httpInterceptorProviders } from './Helpers/http.interceptor';
     HomeComponent,
     JeuComponent,
     CitoyenComponent,
+    AdminComponent,
+    ConseilComponent,
+    ProblematiqueComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,8 @@ import { httpInterceptorProviders } from './Helpers/http.interceptor';
     MatIconModule,
     MatDividerModule,
     FormsModule,
-    //NgxPaginationModule,
+    NgChartsModule,
+    NgxPaginationModule,
     HttpClientModule
   ],
   providers: [httpInterceptorProviders],
