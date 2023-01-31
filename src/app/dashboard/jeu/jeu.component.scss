@@ -242,3 +242,125 @@ input:checked + .slider:before {
   }
 
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////partie jeu
+///
+///
+//////////
+#labelListPreference{
+  margin-top: 120px;
+  font-size: 6vw;
+  display: flex;
+  justify-content: center;
+}
+
+#labelListPreference1{
+  margin-top: 3vw;
+  display: flex;
+  justify-content: center;
+}
+
+.listPreference{
+  height: 32vh;
+  margin-top: 5px;
+  //display: flex;
+  //flex-direction: column;
+  //overflow-y: scroll;
+  //overflow-x:hidden ;
+  // background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+.list{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  background-color: #fff;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding-bottom: 50px;
+}
+
+//
+
+/// Partie preference
+.preference{
+  display: grid;
+  grid-template-rows: 70% 30%;
+  background-color: #fff;
+  height: 20vh;
+  padding: 15px;
+  border-radius: 20px;
+  width: 45%;
+}
+
+.imageEntete >img{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+//////partie game
+.game{
+  height: 55px;
+  border-radius: 10px;
+  margin: 5px 1%;
+  width: 98%;
+  display: grid;
+  grid-template-columns: 29% 40% 29%;
+}
+.imageGame{
+  margin: auto;
+}
+
+.game >.imageGame >img{
+  border-radius: 20px;
+  height: 7.5vh;
+  width: 35vw;
+  object-fit: cover;
+}
+
+.infosPlay{
+  display: grid;
+  grid-auto-flow: 20% 40% 40%;
+}
+
+#likePlay{
+  display: grid;
+  grid-template-columns: 45% 45%;
+  column-gap: 10%;
+}
+
+#likePlay >button{
+  font-size: 9px;
+  padding: 1%;
+  margin: 1px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+#likePlay  >.liked{
+  color: #000;
+
+  border:1px solid#3779FF ;
+}
+#likePlay  >.liked> i{
+  color: #3779FF;
+}
+#likePlay  >.played{
+  color: #000;
+  border:1px solid#BB7676 ;
+}
+#likePlay  >.played> i{
+  color: #BB7676;
+}
+
+.nomGame >label{
+  font-size: 5.5vw;
+  margin: 0;
+}
+/////
+///
+.btnPlay{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}

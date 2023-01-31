@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private tokenService: TokenService, private adminService:AdminService, private router:Router){}
   ngOnInit(): void {
-    this.admin=this.tokenService.getUser()
+    this.admin=this.tokenService.getUser().data
     if(!this.admin){
       console.log(this.admin)
       this.router.navigate(['/login'])
@@ -35,4 +35,7 @@ export class DashboardComponent implements OnInit {
     this.adminService.Deconnecter().subscribe(res=>{},error => {});
     this.router.navigate(['/login'])
   }
+
+
+
 }
