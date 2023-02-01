@@ -12,6 +12,7 @@ export class JeuComponent implements OnInit{
 
 
   nbreJeu:number=0
+  recherche:any
   constructor(private adminService:AdminService, private citoyenService:CitoyenService, private jeuService:JeuService){}
 
 

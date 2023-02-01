@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private tokenService: TokenService, private adminService:AdminService, private router:Router){}
   ngOnInit(): void {
-    this.admin=this.tokenService.getUser().data
+    this.admin=this.tokenService.getUser()
     if(!this.admin){
       console.log(this.admin)
       this.router.navigate(['/login'])
