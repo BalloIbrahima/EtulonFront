@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Modifier problematique</h1>
+
+<div mat-dialog-content>
+
+  <p>Veuillez changer le libelle et la couleur</p>
+  <mat-form-field appearance="fill" [ngStyle]="{'background-color':data.couleur,'display':'flex'}">
+    <mat-label>Libelle de la problematique</mat-label>
+    <input matInput [(ngModel)]="data.libelle" cdkFocusInitial>
+    <color-sketch [(ngModel)]="data.couleur" [color]="data.couleur" (onChangeComplete)="changeComplete($event)"></color-sketch>
+  </mat-form-field>
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Annuler</button>
+  <button mat-button  [disabled]="data.couleur==color && data.libelle==nom" (click)="Update()" >Modifier</button>
+  <!--[mat-dialog-close]="data.animal"-->
+</div>

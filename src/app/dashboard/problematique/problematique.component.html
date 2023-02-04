@@ -57,10 +57,10 @@
                         <div class="cst-market" [ngStyle]="{'background-color':p.couleur}"></div>
                         <!--| date : 'dd-MM-YYYY'-->
                         <!--<div class="cst-num">{{p.agent.numero}}</div>
-                        <div class="cst-sector">{{p.adresse}}</div>
-                        <div class="cst-action" data-bs-toggle="modal" data-bs-target="#modiclientModal">
-                            <button class="button" (click)="modif(c)">Modifier</button>
-                        </div>-->
+                        <div class="cst-sector">{{p.adresse}}</div>-->
+                        <div class="cst-action">
+                            <button class="button"  (click)="update(p)">Modifier</button>
+                        </div>
                     </div>
                     <!-- Fin de la partie qui sera dans la boucle  -->
 

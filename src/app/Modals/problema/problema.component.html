@@ -13,6 +13,6 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Annuler</button>
-  <button mat-button  >Ok</button>
+  <button mat-button [disabled]="color=='#fff' || nom==''" (click)="create()" >Ok</button>
   <!--[mat-dialog-close]="data.animal"-->
 </div>

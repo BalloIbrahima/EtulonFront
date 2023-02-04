@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { EditproblemaComponent } from 'src/app/Modals/editproblema/editproblema.component';
 import { ProblemaComponent } from 'src/app/Modals/problema/problema.component';
 import { ProblematiqueService } from 'src/app/Service/problematique/problematique.service';
 
@@ -41,7 +42,29 @@ export class ProblematiqueComponent implements OnInit{
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      //console.log('The dialog was closed');
+      console.log(result);
+      if(result=='ok'){
+        console.log('successs')
+      }else{
+        console.log('ereeor')
+      }
+    });
+  }
+
+
+  update(problematique:any){
+    const dialogRef = this.dialog.open(EditproblemaComponent, {
+      //width:'300px',
+      data: problematique,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      if(result=='ok'){
+        console.log('successs')
+      }else{
+        console.log('ereeor')
+      }
     });
   }
 

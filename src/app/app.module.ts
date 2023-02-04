@@ -28,6 +28,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ColorSketchModule } from 'ngx-color/sketch';
+import { EditproblemaComponent } from './Modals/editproblema/editproblema.component';
 
 
 
@@ -42,7 +43,8 @@ import { ColorSketchModule } from 'ngx-color/sketch';
     AdminComponent,
     ConseilComponent,
     ProblematiqueComponent,
-    ProblemaComponent
+    ProblemaComponent,
+    EditproblemaComponent
   ],
   imports: [
     BrowserModule,
