@@ -22,6 +22,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { ConseilComponent } from './dashboard/conseil/conseil.component';
 import { ProblematiqueComponent } from './dashboard/problematique/problematique.component';
+import { ProblemaComponent } from './Modals/problema/problema.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatRippleModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ColorSketchModule } from 'ngx-color/sketch';
+
+
 
 @NgModule({
   declarations: [
@@ -34,6 +42,7 @@ import { ProblematiqueComponent } from './dashboard/problematique/problematique.
     AdminComponent,
     ConseilComponent,
     ProblematiqueComponent,
+    ProblemaComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +57,16 @@ import { ProblematiqueComponent } from './dashboard/problematique/problematique.
     FormsModule,
     NgChartsModule,
     NgxPaginationModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule,
+    ColorSketchModule
+  ],
+  entryComponents: [
+    ProblemaComponent
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

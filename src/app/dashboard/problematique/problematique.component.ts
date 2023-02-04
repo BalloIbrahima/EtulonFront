@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ProblemaComponent } from 'src/app/Modals/problema/problema.component';
 import { ProblematiqueService } from 'src/app/Service/problematique/problematique.service';
 
 @Component({
@@ -9,10 +11,11 @@ import { ProblematiqueService } from 'src/app/Service/problematique/problematiqu
 })
 export class ProblematiqueComponent implements OnInit{
 
-  recherche:any
+  recherche:any=''
   problematiques:any=[];
   nombrePreblematique:any=0
-  constructor(private router:Router,private problematiqueService:ProblematiqueService) {}
+
+  constructor(private router:Router,private problematiqueService:ProblematiqueService, public dialog: MatDialog) {}
 
 
   ngOnInit(): void {
@@ -32,7 +35,15 @@ export class ProblematiqueComponent implements OnInit{
 
 
   add(){
+    const dialogRef = this.dialog.open(ProblemaComponent, {
+      //width:'300px',
+      data: {},
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      //console.log('The dialog was closed');
+    });
   }
+
 
 }

@@ -11,6 +11,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^15.0.0",
+    "@angular/cdk": "^15.0.3",
     "@angular/common": "^15.0.0",
     "@angular/compiler": "^15.0.0",
     "@angular/core": "^15.0.0",
@@ -25,6 +26,7 @@
     "chartjs-plugin-datalabels": "^2.2.0",
     "jquery": "^3.6.3",
     "ng2-charts": "^4.1.1",
+    "ngx-color": "^8.0.3",
     "ngx-pagination": "^6.0.3",
     "popper.js": "^1.16.1",
     "rxjs": "~7.5.0",
