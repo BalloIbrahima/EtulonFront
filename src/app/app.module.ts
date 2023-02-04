@@ -29,6 +29,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ColorSketchModule } from 'ngx-color/sketch';
 import { EditproblemaComponent } from './Modals/editproblema/editproblema.component';
+import { NewJeuComponent } from './new-jeu/new-jeu.component';
+import { NewConseilComponent } from './new-conseil/new-conseil.component';
 
 
 
@@ -44,7 +46,9 @@ import { EditproblemaComponent } from './Modals/editproblema/editproblema.compon
     ConseilComponent,
     ProblematiqueComponent,
     ProblemaComponent,
-    EditproblemaComponent
+    EditproblemaComponent,
+    NewJeuComponent,
+    NewConseilComponent
   ],
   imports: [
     BrowserModule,

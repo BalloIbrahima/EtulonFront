@@ -9,6 +9,8 @@ import { JeuComponent } from './dashboard/jeu/jeu.component';
 import { ProblematiqueComponent } from './dashboard/problematique/problematique.component';
 import { DashboardGuard } from './Guard/dashboard/dashboard.guard';
 import { LoginComponent } from './login/login.component';
+import { NewConseilComponent } from './new-conseil/new-conseil.component';
+import { NewJeuComponent } from './new-jeu/new-jeu.component';
 
 const routes: Routes = [
   {path: "dashboard",component:DashboardComponent,canActivate:[DashboardGuard],
@@ -19,6 +21,8 @@ const routes: Routes = [
       {path:"admin",component:AdminComponent},
       {path:"conseil",component:ConseilComponent},
       {path:"problematique",component:ProblematiqueComponent},
+      {path:"nouveaujeu",component:NewJeuComponent},
+      {path:"nouveauconseil",component:NewConseilComponent},
 
       {path: "", redirectTo:"home",pathMatch:'full'  },
       {path: "**", redirectTo:"home",pathMatch:'full'  },

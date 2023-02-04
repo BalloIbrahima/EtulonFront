@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/Service/admin/admin.service';
 import { CitoyenService } from 'src/app/Service/citoyen/citoyen.service';
 import { JeuService } from 'src/app/Service/jeu/jeu.service';
@@ -13,7 +14,8 @@ export class JeuComponent implements OnInit{
 
   nbreJeu:number=0
   recherche:any
-  constructor(private adminService:AdminService, private citoyenService:CitoyenService, private jeuService:JeuService){}
+  constructor(private adminService:AdminService, private citoyenService:CitoyenService, private jeuService:JeuService,
+    private router:Router){}
 
 
   ngOnInit(): void {
@@ -23,4 +25,8 @@ export class JeuComponent implements OnInit{
       this.nbreJeu=res.data
     })
   }
+
+  // addJeu(){
+  //   this.router.navigate(['/dahboard/nouveaujeu'])
+  // }
 }
