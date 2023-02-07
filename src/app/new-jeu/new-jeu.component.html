@@ -17,6 +17,8 @@
 
     <div class="rigth">
       <div class="listProblematique">
+        <label for="" id="textInformation">Veuillez cocher la ou les problémitques du jeu</label>
+
         <div (click)="check(i)" class="card{{i}} card" *ngFor="let prob of problematiques ;let i =index;">
           <i class="fa-solid fa-plus " id="iok{{i}}"></i>
           <i class="fa-solid fa-check d-none" id="ino{{i}}"></i>
@@ -33,7 +35,7 @@
       </div>
 
       <div class="description">
-        <textarea maxlength="150"  name="description" [(ngModel)]="description" id=""  ></textarea>
+        <textarea maxlength="150"  name="description" [(ngModel)]="description" id="" placeholder="Description du jeu"  ></textarea>
 
       </div>
 
