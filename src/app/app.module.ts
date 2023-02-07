@@ -45,6 +45,7 @@ import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 export function playerFactory() {
   return import('lottie-web');
@@ -91,6 +92,7 @@ export function playerFactory() {
     Ng2SearchPipeModule,
     LottieModule.forRoot({player:playerFactory}),
     HttpClientModule,
+    MatSnackBarModule,
 
     AngularFireAuthModule,
     AngularFireStorageModule,

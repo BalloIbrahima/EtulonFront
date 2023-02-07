@@ -16,16 +16,24 @@ export class DashboardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      this.citoyenService.listeCitoyen().subscribe(res=>{
-        console.log(res)
-      },error => {
-        if(error.status==403){
-          this.tokenService.signOut();
-          console.log(error)
-          this.router.navigate(['/login'])
-        }
-      });
-      return true;
+      var admin=this.tokenService.getUser()
+      // console.log(admin.id)
+      if(admin.id){
+        return true;
+      }else{
+        this.router.navigate(['/login'])
+        return false
+      }
+      // this.citoyenService.listeCitoyen().subscribe(res=>{
+      //   console.log(res)
+      // },error => {
+      //   if(error.status==403){
+      //     this.tokenService.signOut();
+      //     console.log(error)
+      //     this.router.navigate(['/login'])
+      //   }
+      // });
+      // return true;
   }
 
 }

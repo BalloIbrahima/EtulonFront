@@ -1,4 +1,43 @@
-<div class="content">
+<div class="contenu mb-4">
+  <label for="" id="titre">Créer un nouveau jeu</label>
+  <form class="content ">
+    <div class="left">
+      <input  type="file" class="imgAfficheur  d-none" (change)="changeFile($event)">
+      <div class="photo" (click)="changeImage()">
+        <img  [src]="imgChosed" alt="">
+      </div>
 
+
+      <div class="nom">
+        <input type="text" class="form-control" [(ngModel)]="nom" name="nom" id="nom" placeholder="Nom du jeu" required>
+
+      </div>
+
+    </div>
+
+    <div class="rigth">
+      <div class="listProblematique">
+        <div (click)="check(i)" class="card{{i}} card" *ngFor="let prob of problematiques ;let i =index;">
+          <i class="fa-solid fa-plus " id="iok{{i}}"></i>
+          <i class="fa-solid fa-check d-none" id="ino{{i}}"></i>
+          <div id="color"></div>
+          <label for="">{{prob.libelle}}</label>
+
+
+
+
+          <div class="d-none">
+            <input type="checkbox" id="card{{i}}" slot="start"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="description">
+        <textarea maxlength="150"  name="description" [(ngModel)]="description" id=""  ></textarea>
+
+      </div>
+
+    </div>
+  </form>
+  <button type="button" class="btn btn-success">Valider</button>
 </div>
-<p>new-jeu works!</p>
