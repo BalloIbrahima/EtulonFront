@@ -26,4 +26,17 @@ export class JeuService {
   nombrejeu():Observable<any>{
     return this.http.get(`${this.env.api}/jeu/getnombre`,this.httpOptions);
   }
+
+  Add(jeu:any):Observable<any>{
+    var data=JSON.stringify(jeu).slice(1,JSON.stringify(jeu).lastIndexOf(']'));
+    return this.http.post(`${this.env.api}/jeu/add`,data);
+  }
+
+  Update(jeu:any):Observable<any>{
+    // const data:FormData=new FormData();
+    // const user=[{"password": password,"pseudo": pseudo}]
+    // data.append('agent', JSON.stringify(user).slice(1,JSON.stringify(user).lastIndexOf(']')));
+    var data=JSON.stringify(jeu).slice(1,JSON.stringify(jeu).lastIndexOf(']'));
+    return this.http.put(`${this.env.api}/problematique/update`,data);
+  }
 }

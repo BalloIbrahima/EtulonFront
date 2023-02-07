@@ -33,6 +33,23 @@ import { NewJeuComponent } from './new-jeu/new-jeu.component';
 import { NewConseilComponent } from './new-conseil/new-conseil.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import player from 'lottie-web';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { LottieModule } from 'ngx-lottie';
+
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
+export function playerFactory() {
+  return import('lottie-web');
+}
+
 
 @NgModule({
   declarations: [
@@ -71,12 +88,22 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatRippleModule,
     ColorSketchModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    LottieModule.forRoot({player:playerFactory}),
+    HttpClientModule,
+
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore())
   ],
   entryComponents: [
     ProblemaComponent
   ],
-  providers: [httpInterceptorProviders],
+  providers: [httpInterceptorProviders,{ provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
