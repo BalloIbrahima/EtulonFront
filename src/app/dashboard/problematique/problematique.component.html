@@ -51,7 +51,7 @@
                     </div>
                     <!-- La partie qui sera dans la boucle  -->
                     <!--|filter:mot | paginate:{itemsPerPage:8, currentPage:a}-->
-                    <div class="customer" *ngFor="let p of problematiques ">
+                    <div class="customer" *ngFor="let p of problematiques |filter:recherche | paginate:{itemsPerPage:8, currentPage:a}">
                         <div class="cst-name">{{p.id}}</div>
                         <div class="cst-id">{{p.libelle}}</div>
                         <div class="cst-market" [ngStyle]="{'background-color':p.couleur}"></div>
@@ -119,9 +119,9 @@
                     </div> -->
                     <!-- Fin de la partie à supprimer  -->
                     <div class="pagination">
-                      <!--<pagination-controls (pageChange)="a = $event" nextLabel="Suivants" previousLabel="Précédents" [responsive]="responsive">
+                      <pagination-controls (pageChange)="a = $event" nextLabel="Suivants" previousLabel="Précédents" [responsive]="responsive">
 
-                      </pagination-controls>-->
+                      </pagination-controls>
                   </div>
                 </div>
             </div>

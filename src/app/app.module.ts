@@ -31,7 +31,7 @@ import { ColorSketchModule } from 'ngx-color/sketch';
 import { EditproblemaComponent } from './Modals/editproblema/editproblema.component';
 import { NewJeuComponent } from './new-jeu/new-jeu.component';
 import { NewConseilComponent } from './new-conseil/new-conseil.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -69,7 +69,9 @@ import { NewConseilComponent } from './new-conseil/new-conseil.component';
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
-    ColorSketchModule
+    ColorSketchModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule
   ],
   entryComponents: [
     ProblemaComponent

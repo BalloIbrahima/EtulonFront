@@ -12,6 +12,8 @@ import { ProblematiqueService } from 'src/app/Service/problematique/problematiqu
 })
 export class ProblematiqueComponent implements OnInit{
 
+  a!:any;
+  responsive = true
   recherche:any=''
   problematiques:any=[];
   nombrePreblematique:any=0

@@ -3,7 +3,7 @@
 <div mat-dialog-content>
 
   <p>Veuillez donnez le libelle et la couleur</p>
-  <mat-form-field appearance="fill" [ngStyle]="{'background-color':color,'display':'flex'}">
+  <mat-form-field  [ngStyle]="{'background-color':color,'display':'flex'}">
     <mat-label>Libelle de la problematique</mat-label>
     <input matInput [(ngModel)]="nom" cdkFocusInitial>
     <color-sketch [color]="color" (onChangeComplete)="changeComplete($event)"></color-sketch>
