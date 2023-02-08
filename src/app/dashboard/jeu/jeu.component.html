@@ -34,34 +34,34 @@
   <div class="partiList listPreference mb-4">
 
 
-    <div class="preference ">
+    <div class="preference" *ngFor="let jeu of allJeux" [routerLink]="['/dashboard/detail',jeu.id]">
       <div class="imageEntete">
-        <img src="assets/images/moi.jpg" alt="">
+        <img src="{{jeu.image}}" alt="">
       </div>
 
       <div class="foot">
 
         <div class="game" >
           <div class="imageGame">
-            <img src="assets/images/moi.jpg" alt="">
+            <img src="{{jeu.image}}" alt="">
           </div>
 
           <div class="infosPlay">
             <div></div>
 
             <div class="nomGame">
-              <label for="">Game Name</label>
+              <label for="">{{jeu.nom}}</label>
 
             </div>
 
             <div id="likePlay">
               <button class="liked">
-                2500
+                {{getNbreLike(jeu.id)}}
                 <i class="fa-solid fa-thumbs-up"></i>
               </button>
 
               <button class="played">
-                500
+                {{getNbreFoisJoue(jeu.id)}}
                 <i class="fa-sharp fa-solid fa-circle-play"></i>
               </button>
             </div>

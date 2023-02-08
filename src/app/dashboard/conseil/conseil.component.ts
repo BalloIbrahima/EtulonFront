@@ -23,7 +23,21 @@ export class ConseilComponent implements OnInit {
   getAll(){
     this.conseilService.getAll().subscribe(res=>{
       this.allConseils=res.data
+      console.log(res.data)
       this.nbreConseil=res.data.length
     })
+  }
+
+
+  //
+  active(type:any){
+    if(type=='attente'){
+      console.log(type)
+
+    }else if(type=='rejet'){
+      console.log(type)
+    }else{
+      console.log(type)
+    }
   }
 }

@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './dashboard/home/home.component';
 import { JeuComponent } from './dashboard/jeu/jeu.component';
 import { ProblematiqueComponent } from './dashboard/problematique/problematique.component';
+import { DetailJeuComponent } from './detail-jeu/detail-jeu.component';
 import { DashboardGuard } from './Guard/dashboard/dashboard.guard';
 import { LoginComponent } from './login/login.component';
 import { NewConseilComponent } from './new-conseil/new-conseil.component';
@@ -23,6 +24,8 @@ const routes: Routes = [
       {path:"problematique",component:ProblematiqueComponent},
       {path:"nouveaujeu",component:NewJeuComponent},
       {path:"nouveauconseil",component:NewConseilComponent},
+      {path:"detail/:id",component:DetailJeuComponent},
+
 
       {path: "", redirectTo:"home",pathMatch:'full'  },
       {path: "**", redirectTo:"home",pathMatch:'full'  },

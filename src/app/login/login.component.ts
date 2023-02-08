@@ -38,7 +38,7 @@ export class LoginComponent {
       this.log= this.adminService.login(this.username,this.password).subscribe(
         data=>{
           console.log(data)
-          this.tokenStorage.saveToken(data.accessToken);
+          this.tokenStorage.saveToken(data.token);
           this.tokenStorage.saveUser(data);
           this.router.navigate(['/dashboard'])
       }, error => {

@@ -46,6 +46,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DetailJeuComponent } from './detail-jeu/detail-jeu.component';
 
 export function playerFactory() {
   return import('lottie-web');
@@ -66,7 +67,8 @@ export function playerFactory() {
     ProblemaComponent,
     EditproblemaComponent,
     NewJeuComponent,
-    NewConseilComponent
+    NewConseilComponent,
+    DetailJeuComponent
   ],
   imports: [
     BrowserModule,
