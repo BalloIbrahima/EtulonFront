@@ -47,6 +47,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DetailJeuComponent } from './detail-jeu/detail-jeu.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 export function playerFactory() {
   return import('lottie-web');
@@ -95,7 +96,7 @@ export function playerFactory() {
     LottieModule.forRoot({player:playerFactory}),
     HttpClientModule,
     MatSnackBarModule,
-
+    MatProgressBarModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,

@@ -43,4 +43,19 @@ export class ConseilService {
   }
 
 
+  getActives() :Observable<any>{
+    //const data=JSON.stringify(conseil).slice(1,JSON.stringify(conseil).lastIndexOf(']'))
+    return this.http.get(`${this.env.api}/conseil/getConseilsActives`, this.httpOptions);
+  }
+
+  getAttentes() :Observable<any>{
+    //const data=JSON.stringify(conseil).slice(1,JSON.stringify(conseil).lastIndexOf(']'))
+    return this.http.get(`${this.env.api}/conseil/getConseilsAttentes`, this.httpOptions);
+  }
+
+  getRejets() :Observable<any>{
+    //const data=JSON.stringify(conseil).slice(1,JSON.stringify(conseil).lastIndexOf(']'))
+    return this.http.get(`${this.env.api}/conseil/getConseilsRejetes`, this.httpOptions);
+  }
 }
+

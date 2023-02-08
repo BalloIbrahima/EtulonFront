@@ -371,3 +371,196 @@ input[type="radio"] {
 
 
 ///////////////////////
+/////conseil
+///
+///
+//
+////list conseils
+.partiList{
+  display: grid;
+}
+.list{
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  /* margin-bottom: 50px; */
+  scroll-behavior: smooth;
+  height: 400px;
+  margin-top: 2%;
+}
+.conseil{
+  display: grid;
+    height: 370px;
+    margin: 0px 10px;
+    background-color: #d9d9d9;
+    border-radius: 30px;
+    grid-template-rows: 10% 80% 10%;
+}
+
+.conseil >.tete{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+.tete >div{
+  display: flex;
+  flex-direction: row;
+}
+.tete >div> #circle{
+  height: 25px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  border-radius: 50%;
+
+}
+
+.tete >#date{
+  display: inline-flex;
+  text-align: center;
+  font-size: 8px;
+  margin: auto;
+  justify-content: center;
+}
+
+.tete > div>label{
+  margin: auto;
+  margin-left: 5px;
+  font-size: 10px;
+}
+
+.conseil >.tronc{
+  color: #fff;
+  text-align: center;
+  // margin: auto;
+  width: 200px;
+
+  label{
+    margin: auto;
+  }
+}
+
+.conseil >.membre{
+  display: grid;
+  grid-template-columns: 67% 33%;
+
+}
+
+
+
+
+///secaind profil
+.profilContenu2{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  margin: 2% 0px 0px 8%;
+  color: #000;
+
+}
+.profilContenu2 >.image{
+
+  height: 27px;
+  width: 27px;
+  border-radius: 50%;
+  // border: 1px solid black;
+  margin: auto;
+}
+
+.profilContenu2 >.image >img{
+  margin: auto;
+
+  height: 25px;
+  width: 25px;
+
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.5vw solid #fff;
+}
+
+.profilContenu2>.infosProfil{
+  margin: auto;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profilContenu2 >.infosProfil > #nomComplet{
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  margin: 0;
+}
+
+.profilContenu2 >.infosProfil > #username{
+  font-size: 9px;
+  margin: 0;
+}
+///
+.likePart{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.likePart >.bdy{
+  display: flex;
+  // font-size: 7vw;
+  border-radius: 30px;
+  padding: 2px 4px;
+  border: 1px solid;
+  margin: auto;
+  flex-direction: column;
+}
+
+
+.bdy >label, .bdy>i{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+/////////
+///for audio
+///
+
+.audioContent{
+  background-color: #fff;
+  border-radius: 30px;
+  width: 95%;
+  margin: auto;
+  height: 6vh;
+  display: grid;
+  color: #000;
+  grid-template-columns: 10% 80% 10%;
+}
+
+.counter{
+  margin: auto;
+  width: 85%;
+}
+
+mat-progress-bar{
+  height: 10px;
+  display: flex;
+  margin: auto;
+  width: 100%;
+
+  border-radius: 10px;
+}
+#lbl{
+  position: relative;
+  margin: auto;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.audioContent .btn,  .volumePart{
+  margin: auto;
+  font-size: 15px;
+}

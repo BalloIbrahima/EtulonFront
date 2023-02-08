@@ -50,10 +50,10 @@
     <div class="container">
       <div class="tabs">
         <input type="radio" id="radio-2" name="tabs" (click)="active('valide')" checked/>
-        <label class="tab" for="radio-2" (click)="active('attente')">Quiz validés</label>
+        <label class="tab" for="radio-2" >Quiz validés</label>
 
         <input type="radio" id="radio-1" name="tabs"   />
-        <label class="tab" for="radio-1" >Quiz en attentes<span class="notification">2</span></label>
+        <label class="tab" for="radio-1" (click)="active('attente')">Quiz en attentes<span class="notification">{{nombrenonValide}}</span></label>
 
         <input type="radio" id="radio-3" name="tabs" (click)="active('rejet')"/>
         <label class="tab" for="radio-3">Quiz réjétés</label>
@@ -64,7 +64,75 @@
 
     <div class="list">
 
+      <div class="conseil" *ngFor="let conseil of allConseils, let i=index" >
+        <div class="tete">
+          <div>
+            <div id="circle" [ngStyle]="{'background-color':conseil.problematique.couleur}"></div>
+            <label for="">{{conseil.problematique.libelle}}</label>
+          </div>
 
+          <label for="" id="date">{{dateDiff(conseil.date,today)}}</label>
+        </div>
+
+         <!--pour text-->
+        <div class="tronc" [ngStyle]="{'background-color':conseil.color,'color':'#fff','display':'flex'}"  *ngIf="conseil.type==='TEXT'">
+
+          <label for="" id="contenuLabel">{{conseil.contenu}}</label>
+
+        </div>
+
+        <!--Pour audio-->
+        <div class="tronc" [ngStyle]="{'background-color':conseil.color,'display':'flex'}"  *ngIf="conseil.type==='AUDIO'">
+
+          <!--<audio
+                #player+i
+                [src]="conseil.lien">
+          </audio>-->
+
+
+          <div class="audioContent" (click)="PlayFile(conseil.lien,i)">
+            <div class="btn">
+              <i class="fa-solid fa-pause d-none none{{i}} pause{{i}}" ></i>
+              <i class="fa-solid fa-play play{{i}}" ></i>
+            </div>
+
+
+            <div class="counter">
+
+              <mat-progress-bar mode="determinate" class="audio{i}" [color]="conseil.color"  [ngStyle]="{'background':'#0000005d','color':conseil.color,'display':'flex'}" ></mat-progress-bar>
+              <!--<ion-range min="0" max="{{duration}}" [(ngModel)]="position" color="light"></ion-range>-->
+
+              <label for="" id="lbl"><p href="" id="minute">0.00</p>/2.66</label>
+            </div>
+
+            <div class="volumePart">
+              <i class="fa-solid fa-volume"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="membre" >
+          <div class="profilContenu2">
+            <div class="image">
+              <img src="{{conseil.user.photo}}" alt="">
+            </div>
+
+            <div class="infosProfil">
+              <label for="" id="nomComplet">{{conseil.user.nom}}</label>
+              <label for="" id="username">@{{conseil.user.username}}</label>
+            </div>
+          </div>
+
+          <div class="likePart likedPart(i)">
+            <div class="bdy bdy{{i}} liked liked{{i}}">
+              <i class="fa-solid fa-thumbs-up"></i>
+
+
+            </div>
+
+          </div>
+        </div>
+    </div>
 
     </div>
 
