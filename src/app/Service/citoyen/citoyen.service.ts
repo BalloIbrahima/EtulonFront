@@ -43,4 +43,11 @@ export class CitoyenService {
     return this.http.get(`${this.env.api}/user/nombre/ayentconseils`,this.httpOptions);
   }
 
+  //liste des citoyens
+  getCitoyen(id:any):Observable<any>{
+    //console.log(this.httpOptions)
+    return this.http.get(`${this.env.api}/user/get/${id}`,this.httpOptions);
+  }
+
+
 }

@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './dashboard/home/home.component';
 import { JeuComponent } from './dashboard/jeu/jeu.component';
 import { ProblematiqueComponent } from './dashboard/problematique/problematique.component';
+import { DetailCitoyenComponent } from './detail-citoyen/detail-citoyen.component';
 import { DetailJeuComponent } from './detail-jeu/detail-jeu.component';
 import { DashboardGuard } from './Guard/dashboard/dashboard.guard';
 import { LoginComponent } from './login/login.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
       {path:"nouveaujeu",component:NewJeuComponent},
       {path:"nouveauconseil",component:NewConseilComponent},
       {path:"detail/:id",component:DetailJeuComponent},
+      {path:"detailCitoyen/:id",component:DetailCitoyenComponent},
 
 
       {path: "", redirectTo:"home",pathMatch:'full'  },

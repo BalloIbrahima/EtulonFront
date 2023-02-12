@@ -41,7 +41,7 @@
   </div>
 
   <div class="listeCitoyen">
-      <div class="citoyen" *ngFor="let cit of allCitoyen |filter:recherche| paginate:{itemsPerPage:15, currentPage:a}, let i=index">
+      <div class="citoyen" *ngFor="let cit of allCitoyen |filter:recherche| paginate:{itemsPerPage:15, currentPage:a}, let i=index" [routerLink]="['/dashboard/detailCitoyen',cit.id]">
         <div class="user">
             <div class="imgBox">
                 <img src="{{cit.photo}}">
