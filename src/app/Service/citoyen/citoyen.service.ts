@@ -31,4 +31,16 @@ export class CitoyenService {
   nombreCitoyen():Observable<any>{
     return this.http.get(`${this.env.api}/user/nbre/citoyen`,this.httpOptions);
   }
+
+
+  //nombre de citoyen ayant joues
+  nombreCitoyenAyantJoues():Observable<any>{
+    return this.http.get(`${this.env.api}/user/nombre/ayentjoues`,this.httpOptions);
+  }
+
+  //nombre de citoyen ayant donnes conseils
+  nombreCitoyenAyantConseil():Observable<any>{
+    return this.http.get(`${this.env.api}/user/nombre/ayentconseils`,this.httpOptions);
+  }
+
 }

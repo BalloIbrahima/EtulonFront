@@ -41,7 +41,7 @@
 
 
   <div class="rechercheParti form-floating mb-4">
-    <input type="search" class="form-control" placeholder="Rechercher un conseil" [(ngModel)]="recherche">
+    <input type="search" class="form-control" placeholder="Rechercher un conseil" [(ngModel)]="recherche" name="recherche">
   </div>
 
 
@@ -50,13 +50,13 @@
     <div class="container">
       <div class="tabs">
         <input type="radio" id="radio-2" name="tabs" (click)="active('valide')" checked/>
-        <label class="tab" for="radio-2" >Quiz validés</label>
+        <label class="tab" for="radio-2" >Validés</label>
 
         <input type="radio" id="radio-1" name="tabs"   />
-        <label class="tab" for="radio-1" (click)="active('attente')">Quiz en attentes<span class="notification">{{nombrenonValide}}</span></label>
+        <label class="tab" for="radio-1" (click)="active('attente')">En attentes<span class="notification">{{nombrenonValide}}</span></label>
 
         <input type="radio" id="radio-3" name="tabs" (click)="active('rejet')"/>
-        <label class="tab" for="radio-3">Quiz réjétés</label>
+        <label class="tab" for="radio-3">Réjétés</label>
         <span class="glider"></span>
       </div>
     </div>
@@ -64,7 +64,7 @@
 
     <div class="list">
 
-      <div class="conseil" *ngFor="let conseil of allConseils, let i=index" >
+      <div class="conseil" *ngFor="let conseil of allConseils | filter:recherche, let i=index" >
         <div class="tete">
           <div>
             <div id="circle" [ngStyle]="{'background-color':conseil.problematique.couleur}"></div>

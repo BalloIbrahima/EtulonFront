@@ -40,12 +40,16 @@ export class ProblemaComponent implements OnInit {
       'id':this.id,
       'libelle':this.nom,
       'couleur':this.color,
-      'user':this.admin
+      'user':{
+        'id':this.admin.id
+      }
     }]
+    console.log(problematique)
 
     this.problematiqueService.Add(problematique).subscribe(res=>{
       console.log(res)
       this.dialogRef.close(res.message);
+
     })
   }
 

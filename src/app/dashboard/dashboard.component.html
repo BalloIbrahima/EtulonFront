@@ -31,7 +31,7 @@
           </span> Citoyens</a>
         </li>
         <li>
-          <a [routerLink]="['/dashboard/admin']" routerLinkActive="active"><span class="mr-3">
+          <a [routerLink]="['/dashboard/admin']" *ngIf="admin.roles[0]=='ROLE_SUPERADMIN'" routerLinkActive="active"><span class="mr-3">
             <i class="fa-sharp fa-solid fa-user-gear"></i>
           </span> Admins</a>
         </li>

@@ -26,7 +26,7 @@
   </div>
 
   <div class="rechercheParti form-floating mb-4">
-    <input type="search" class="form-control" placeholder="Rechercher un jeu" [(ngModel)]="recherche">
+    <input type="search" class="form-control" placeholder="Rechercher un jeu" [(ngModel)]="recherche" name="recherche">
   </div>
 
 
@@ -34,7 +34,7 @@
   <div class="partiList listPreference mb-4">
 
 
-    <div class="preference" *ngFor="let jeu of allJeux" [routerLink]="['/dashboard/detail',jeu.id]">
+    <div class="preference" *ngFor="let jeu of allJeux | filter:recherche"  [routerLink]="['/dashboard/detail',jeu.id]">
       <div class="imageEntete">
         <img src="{{jeu.image}}" alt="">
       </div>
@@ -56,12 +56,12 @@
 
             <div id="likePlay">
               <button class="liked">
-                {{getNbreLike(jeu.id)}}
+                {{jeu.nbreLike}}
                 <i class="fa-solid fa-thumbs-up"></i>
               </button>
 
               <button class="played">
-                {{getNbreFoisJoue(jeu.id)}}
+                {{jeu.nbreJoues}}
                 <i class="fa-sharp fa-solid fa-circle-play"></i>
               </button>
             </div>

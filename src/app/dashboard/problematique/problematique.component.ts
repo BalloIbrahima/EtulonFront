@@ -64,6 +64,7 @@ export class ProblematiqueComponent implements OnInit{
       console.log(result);
       if(result=='ok'){
         console.log('successs')
+        this.getAllProblematiques()
       }else{
         console.log('ereeor')
       }

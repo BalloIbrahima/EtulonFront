@@ -13,7 +13,7 @@ export class JeuComponent implements OnInit{
 
 
   nbreJeu:number=0
-  recherche:any
+  recherche:any=''
 
   allJeux:any=[]
   listPlay:any=[]

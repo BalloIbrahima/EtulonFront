@@ -1,1 +1,62 @@
-<p>citoyen works!</p>
+<div class="content">
+
+  <div class="c-card mb-4">
+    <div class="cd">
+        <div class="cd-left text-center w-50">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="cd-text">
+            Ont donnés des conseils
+          </div>
+        </div>
+        <div class="ctn w-50">
+            <div class="ctn-content" >{{nbreJCitoyenConseil}}</div>
+        </div>
+    </div>
+    <div class="cd">
+        <div class="ctn w-50">
+            <div class="ctn-content" >{{nbreJCitoyenJoue}}</div>
+        </div>
+        <div class="cd-left text-center w-50 ">
+          <i class="fa-sharp fa-solid fa-users"></i>
+          <div class="cd-text">
+            Ont déja joués
+          </div>
+        </div>
+    </div>
+    <div class="cd"  data-bs-toggle="modal" data-bs-target="#addAgentModal">
+      <div class="cd-left text-center w-50">
+          <i class="fa-sharp fa-solid fa-user-gear"></i>
+          <div class="cd-text">
+            Citoyens
+          </div>
+        </div>
+        <div class="ctn w-50">
+          <div class="ctn-content" >{{nbreCitoyen}}</div>
+        </div>
+    </div>
+  </div>
+
+  <div class="rechercheParti form-floating mb-4">
+    <input type="search" class="form-control" placeholder="Rechercher un citoyen" [(ngModel)]="recherche" name="recherche">
+  </div>
+
+  <div class="listeCitoyen">
+      <div class="citoyen" *ngFor="let cit of allCitoyen |filter:recherche| paginate:{itemsPerPage:15, currentPage:a}, let i=index">
+        <div class="user">
+            <div class="imgBox">
+                <img src="{{cit.photo}}">
+            </div>
+            <div class="details">
+                <h1 class="gradient-text">{{cit.nom}}</h1>
+                <p class="gradient-text">{{cit.username}}</p>
+            </div>
+        </div>
+
+      </div>
+
+
+  </div>
+  <div class="pagination">
+    <pagination-controls (pageChange)="a = $event" nextLabel="Suivants" previousLabel="Précédents" [responsive]="responsive">
+  </pagination-controls>
+</div>
