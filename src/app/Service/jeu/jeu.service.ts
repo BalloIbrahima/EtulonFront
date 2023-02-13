@@ -76,4 +76,20 @@ export class JeuService {
   }
 
 
+
+  UserLastGameLikst(idUser:any,nombre:any):Observable<any>{
+    return this.http.get(`${this.env.api}/user/mesderniersjeux/${idUser}/${nombre}`,this.httpOptions);
+  }
+
+
+
+  GetBestPlayed() :Observable<any>{
+    console.log(this.httpOptions)
+    return this.http.get(`${this.env.api}/jeu/getBestPlayed`,this.httpOptions);
+  }
+
+  getPreferences(idUser:Number):Observable<any>{
+    return this.http.get(`${this.env.api}/user/preferences/${idUser}`,this.httpOptions);
+  }
+
 }

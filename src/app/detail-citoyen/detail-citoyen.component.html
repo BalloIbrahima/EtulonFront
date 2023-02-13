@@ -10,4 +10,110 @@
       <label for="" id="nbreConseil">{{nbreConseil}} conseils donnés</label>
     </div>
   </div>
+
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#jeux" role="tab" data-toggle="tab">Jeux</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#conseils" role="tab" data-toggle="tab">Conseils</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+    <div role="tabpanel" class="tab-pane fade in active" id="profile">
+      <!--  profile -->
+      <div class="infosCompte">
+        <div class="infosCompte">
+          <div class="ptConseil">
+
+            <div class="tulonPoint">
+
+              <div id="nombre">
+                <label for="" id="number" >{{score}}</label>
+                <label for="" id="name" >Tulon Point</label>
+              </div>
+
+              <div id="imgpt">
+                <img src="assets/images/Tulon Point.png" alt="" srcset="">
+              </div>
+            </div>
+
+            <div class="conseil">
+              <div id="nombre">
+                <label for="" id="number" >{{nbreConseil}}</label>
+                <label for="" id="name" >Conseils</label>
+              </div>
+
+              <div id="imgpt">
+                <img src="assets/images/conseil.png" alt="" srcset="">
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="nmbre">
+
+            <div class="gamePlayed">
+              <div id="nombre">
+                <label for="" id="number" >{{nbreFoiJoue}}</label>
+                <label for="" id="name" >Jeux joues</label>
+
+              </div>
+
+              <div id="imgpt">
+                <img src="assets/images/jeux.png" alt="" srcset="">
+              </div>
+            </div>
+
+            <div class="timePlayed">
+              <div id="nombre">
+                <label for="" id="number" >{{time}}</label>
+                <label for="" id="name" >Minutes joues</label>
+              </div>
+
+              <div id="imgpt">
+                <img src="assets/images/time.png" alt="" srcset="">
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!--  profile -->
+    <!--  jeux -->
+    <div role="tabpanel" class="tab-pane fade" id="jeux">
+      <div class="listjeux"  *ngIf="jeux.length!=0">
+        jeux
+      </div>
+      <div class="ras" *ngIf="jeux.length==0">
+        <label for="">Ce joueur n'a joué à aucun jeu.</label>
+      </div>
+    </div>
+    <!--  jeux -->
+    <!--  conseils -->
+    <div role="tabpanel" class="tab-pane fade" id="conseils">
+
+      <div class="listconseils" *ngIf="conseils.length!=0">
+        conseils
+      </div>
+
+      <div class="ras" *ngIf="conseils.length==0">
+        <label for="">Ce joueur n'a publié aucun conseil.</label>
+      </div>
+
+    </div>
+     <!--  conseils -->
+  </div>
+
 </div>

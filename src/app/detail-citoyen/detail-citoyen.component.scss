@@ -1,6 +1,3 @@
-.content{
-
-}
 
 .entete{
   display: flex;
@@ -47,3 +44,96 @@
     }
   }
 }
+
+.ras{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+////////
+/// profile
+///
+/////dexieme partie
+.infosCompte{
+  margin-left: 2%;
+  margin-right: 2%;
+  display: grid;
+  margin-bottom: 5%;
+  grid-template-rows: auto auto;
+  row-gap: 8%;
+  color: #fff;
+}
+
+.infosCompte>  .ptConseil{
+  display: flex;
+  flex-direction: row;
+//   grid-template-columns: 58% 40%;
+//   column-gap: 2%;
+}
+
+.ptConseil >div, .nmbre >div{
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-top: 5px;
+
+}
+
+
+.ptConseil >div >#nombre,.nmbre>div >#nombre{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
+
+.ptConseil >div >#nombre>#number,.nmbre>div >#nombre>#number{
+  font-size: 10vw;
+  font-weight: bold;
+  margin: 0;
+}
+
+.ptConseil >div >#nombre>#name,.nmbre>div >#nombre>#name{
+  font-size: 2vw;
+  margin: 0;
+}
+
+.ptConseil >div >#imgpt,.nmbre>div >#imgpt{
+
+}
+
+.nomGame{
+  font-size: 6vw;
+}
+
+
+
+.infosCompte>  .nmbre{
+  display: grid;
+  grid-template-columns: 49% 49%;
+  column-gap: 2%;
+}
+
+.tulonPoint{
+  background-color: #3779FF;
+}
+
+.conseil{
+  background-color: #BB7676;
+}
+
+.gamePlayed{
+  background-color: #FF981F;
+
+}
+
+.timePlayed{
+  background-color: #F75555;
+}
+
+#imgpt >img{
+  height: 15vh;
+}
+///////profile
