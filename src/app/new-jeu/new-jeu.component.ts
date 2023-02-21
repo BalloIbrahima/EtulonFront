@@ -27,7 +27,7 @@ export class NewJeuComponent implements OnInit{
   problematiquesChoisis:any=[]
 
   imgChosed:any='https://firebasestorage.googleapis.com/v0/b/e-tulon.appspot.com/o/Fichiers%2FJeu%2Fimagejeu.jpeg?alt=media&token=138f427d-b5b1-4e8d-9179-1d759f04a9ea'
-  fichier:any
+  fichier:any=null
   constructor(private router:Router,public afAuth: AngularFireAuth,private jeuService:JeuService,private snackBar: MatSnackBar,
     private problematiqueService:ProblematiqueService,
     private tokenStorage:TokenService,private db: AngularFireDatabase, private storage: AngularFireStorage) { }
@@ -46,20 +46,30 @@ export class NewJeuComponent implements OnInit{
 
     Create(){
 
-    for(let i=0; i<this.problematiques.length;i++){
-      var checkbox= <HTMLInputElement>document.querySelector('#card'+i)
-      if(checkbox.checked){
-        this.problematiquesChoisis.push(this.problematiques[i])
+      for(let i=0; i<this.problematiques.length;i++){
+        var checkbox= <HTMLInputElement>document.querySelector('#card'+i)
+        if(checkbox.checked){
+          this.problematiquesChoisis.push(this.problematiques[i])
+        }
       }
-    }
+      console.log(this.problematiquesChoisis)
 
-    if(this.problematiquesChoisis.length==0){
-      // this.isError=true
-      // this.erreur='Veuillez selectionner au moins une problematique .'
-    }else{
-      localStorage.setItem('preferences',JSON.stringify(this.problematiquesChoisis))
-      this.router.navigate(['/login'])
-    }
+      if(this.problematiquesChoisis.length==0){
+        this.snackBar.open("Veuillez choisir au moins une problematique.", 'Fermer',{
+          duration: 5000,
+          panelClass: ['color-snackbar']
+        });
+        // this.isError=true
+        // this.erreur='Veuillez selectionner au moins une problematique .'
+      }else{
+        if(this.fichier==null){
+          this.newJeu(this.imgChosed)
+        }else{
+          this.pushFileToFirabase(this.fichier)
+        }
+        //localStorage.setItem('preferences',JSON.stringify(this.problematiquesChoisis))
+        ///]]/this.router.navigate(['/login'])
+      }
 
 
     }
@@ -67,7 +77,7 @@ export class NewJeuComponent implements OnInit{
 
     //upload de fichier
   pushFileToFirabase(fileUpload: File): Observable<any> {
-    const filePath = `Fichiers/audio/${fileUpload.name}`;
+    const filePath = `Fichiers/Jeu/${fileUpload.name}`;
     const storageRef = this.storage.ref(filePath);
     const uploadTask = this.storage.upload(filePath, fileUpload);
 
@@ -76,7 +86,7 @@ export class NewJeuComponent implements OnInit{
         storageRef.getDownloadURL().subscribe(downloadURL => {
           console.log(downloadURL)
 
-          this.inscription(downloadURL)
+          this.newJeu(downloadURL)
 
         });
       })
@@ -86,7 +96,7 @@ export class NewJeuComponent implements OnInit{
   }
 
 
-  inscription(url:any){
+  newJeu(url:any){
 
   // var table=JSON.parse(localStorage.getItem('preferences')!) || []
   //
@@ -97,9 +107,7 @@ export class NewJeuComponent implements OnInit{
     'user':{
       'id':this.admin.id
     },
-    'problematiques':[
-
-    ]
+    'problematiques':this.problematiquesChoisis
   }]
 
     console.log(Jeu)
@@ -107,9 +115,15 @@ export class NewJeuComponent implements OnInit{
     this.jeuService.Add(Jeu).subscribe(data=>{
       console.log(data)
       if(data.message=='ok'){
-
+        this.snackBar.open('Jeu cree avec succes !', 'Ajouter Niveau',{
+          panelClass: ['color-snackbar']
+        })
       }else{
         //console.log(data)
+        this.snackBar.open('Erreur lors  de la creation du jeu !', 'Fermer',{
+          duration: 5000,
+
+        });
         this.isErrorBack=true
         this.erreurBack=data.data
       }

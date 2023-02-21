@@ -1,6 +1,6 @@
-<div class="contenu mb-4">
+<form class="contenu mb-4"  action="" method="post" #f2="ngForm">
   <label for="" id="titre">Créer un nouveau Quiz</label>
-  <form class="content ">
+  <div class="content ">
     <div class="left">
       <input  type="file" class="imgAfficheur  d-none" (change)="changeFile($event)">
       <div class="photo" (click)="changeImage()">
@@ -35,11 +35,11 @@
       </div>
 
       <div class="description">
-        <textarea maxlength="150"  name="description" [(ngModel)]="description" id="" placeholder="Description du jeu"  ></textarea>
+        <textarea maxlength="150"  name="description" [(ngModel)]="description" id="" placeholder="Description du jeu"  required></textarea>
 
       </div>
 
     </div>
-  </form>
-  <button type="button" class="btn btn-success">Valider</button>
-</div>
+  </div>
+  <button type="button" [disabled]="f2.form.invalid"  class="btn btn-success" (click)="Create()">Valider</button>
+</form>

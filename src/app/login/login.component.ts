@@ -35,27 +35,28 @@ export class LoginComponent {
   login(f:NgForm){
     this.Iserror=false;
 
-      this.log= this.adminService.login(this.username,this.password).subscribe(
-        data=>{
+      this.adminService.login(this.username,this.password).subscribe({
+        next:data=>{
           console.log(data)
           this.tokenStorage.saveToken(data.token);
           this.tokenStorage.saveUser(data);
           this.router.navigate(['/dashboard'])
-      }, error => {
+      },error: error => {
+        console.log(error.error)
         // this.errorMessage = err.error.message;
         // this.isLoginFailed = true;
-        if(error.status==403){
+        if(error.error.data=="Bad credentials"){
           this.Iserror=true;
-         //console.log(error.status)
+          console.log(error.status)
           this.erreur="Username ou mots de passe incorrect !"
 
         }
-      })
+      }})
 
   }
 
 
-  ngOnDestroy(){
-    this.log.unsubscribe();
- }
+//   ngOnDestroy(){
+//     this.log.unsubscribe();
+//  }
 }
