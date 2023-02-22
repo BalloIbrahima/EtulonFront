@@ -15,8 +15,10 @@ export class DetailJeuComponent implements OnInit {
 
   idJeu:any
   Jeu:any
+  nom:any=''
   imageJeu:any
   ListNiveau:any=[]
+  ListProblematique:any=[]
   descriptionJeu:any
   constructor(private adminService:AdminService, private citoyenService:CitoyenService, private jeuService:JeuService,
     private niveauService:NiveauService, private route:ActivatedRoute, private router:Router){}
@@ -28,8 +30,10 @@ export class DetailJeuComponent implements OnInit {
     this.jeuService.GetJeu(this.idJeu).subscribe(retour=>{
       console.log(retour)
       this.Jeu=retour.data
+      this.nom=this.Jeu.nom
       this.imageJeu=this.Jeu.image
       this.descriptionJeu=this.Jeu.description
+      this.ListProblematique=this.Jeu.problematiques
       ///recuperation des niveaux
       this.niveauService.GetNiveauPourJeu(this.Jeu.id).subscribe(res=>{
         console.log(res)

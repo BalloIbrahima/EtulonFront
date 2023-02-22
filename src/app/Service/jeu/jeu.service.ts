@@ -29,7 +29,7 @@ export class JeuService {
 
   Add(jeu:any):Observable<any>{
     var data=JSON.stringify(jeu).slice(1,JSON.stringify(jeu).lastIndexOf(']'));
-    return this.http.post(`${this.env.api}/jeu/add`,data);
+    return this.http.post(`${this.env.api}/jeu/add`,data,this.httpOptions);
   }
 
   Update(jeu:any):Observable<any>{

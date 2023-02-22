@@ -57,7 +57,7 @@ export class NewJeuComponent implements OnInit{
       if(this.problematiquesChoisis.length==0){
         this.snackBar.open("Veuillez choisir au moins une problematique.", 'Fermer',{
           duration: 5000,
-          panelClass: ['color-snackbar']
+          panelClass: ['blue-snackbar']
         });
         // this.isError=true
         // this.erreur='Veuillez selectionner au moins une problematique .'

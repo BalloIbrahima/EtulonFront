@@ -1,1 +1,42 @@
-<p>detail-jeu works!</p>
+<form class="contenu mb-4"  action="" method="post" #f2="ngForm">
+  <label for="" id="titre">{{nom}}</label>
+  <div class="content ">
+    <div class="left">
+      <div class="photo" >
+        <img  [src]="imageJeu" alt="">
+      </div>
+
+
+      <div class="nom">
+        <label  name="nom" id="nom" placeholder="Nom du jeu">{{descriptionJeu}}</label>
+      </div>
+
+    </div>
+
+    <div class="rigth">
+      <div class="listProblematique">
+        <label for="" id="textInformation">Les problémitques du jeu</label>
+
+        <div  class="card{{i}} card" *ngFor="let prob of ListProblematique ;let i =index;">
+          <div class="rounded" [ngStyle]="{'background-color':prob.couleur}" style="width:20px"></div>
+          <i class="fa-solid fa-check d-none" id="ino{{i}}"></i>
+          <div id="color"></div>
+          <label for="">{{prob.libelle}}</label>
+
+
+
+
+          <div class="d-none">
+            <input type="checkbox" id="card{{i}}" slot="start"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="description">
+        <label >{{descriptionJeu}}</label>
+
+      </div>
+
+    </div>
+  </div>
+</form>
