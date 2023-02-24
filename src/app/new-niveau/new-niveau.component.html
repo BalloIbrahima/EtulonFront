@@ -1,0 +1,20 @@
+<form action=""  class="contenu"  action="" method="post" #f2="ngForm">
+
+  <div class="imageChosed">
+    <input  type="file" class="imgAfficheur  d-none" (change)="changeFile($event)">
+    <div class="photo" (click)="changeImage()">
+      <img  [src]="imgChosed" alt="">
+    </div>
+
+
+    <input type="text" class="form-control" [(ngModel)]="nom" name="nom" id="nom" placeholder="Nom du niveau" required>
+
+    <div class="description">
+      <textarea maxlength="100"  name="description" [(ngModel)]="description" id="" placeholder="Description du jeu"  required></textarea>
+    </div>
+  </div>
+
+
+  <button type="button" [disabled]="f2.form.invalid"  class="btn btn-success" (click)="Create()">Valider</button>
+
+</form>

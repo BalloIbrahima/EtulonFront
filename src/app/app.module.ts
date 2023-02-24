@@ -49,6 +49,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DetailJeuComponent } from './detail-jeu/detail-jeu.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { DetailCitoyenComponent } from './detail-citoyen/detail-citoyen.component';
+import { NewNiveauComponent } from './new-niveau/new-niveau.component';
 
 export function playerFactory() {
   return import('lottie-web');
@@ -71,7 +72,8 @@ export function playerFactory() {
     NewJeuComponent,
     NewConseilComponent,
     DetailJeuComponent,
-    DetailCitoyenComponent
+    DetailCitoyenComponent,
+    NewNiveauComponent
   ],
   imports: [
     BrowserModule,

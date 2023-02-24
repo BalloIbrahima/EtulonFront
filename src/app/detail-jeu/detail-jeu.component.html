@@ -33,7 +33,12 @@
       </div>
 
       <div class="description">
-        <label >{{descriptionJeu}}</label>
+        <button  class="btn btn-success" for=""   style="
+        display: flex;
+        margin: auto;
+    "><i class="fa-solid fa-plus "  >Ajouter un niveau</i></button>
+        <label *ngFor="let niveau of ListNiveau ;let i =index;">{{niveau.libelle}}</label>
+        <label for="" *ngIf="ListNiveau.length==0">Aucun niveau </label>
 
       </div>
 
